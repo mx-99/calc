@@ -16,3 +16,18 @@ function div(a,b){
 let firstNumber = '';
 let operator = '';
 let secondNumber = ''
+
+function operate(op, a, b){
+    switch(op){
+        case '+':
+            return add(a,b);
+        case '-':
+            return sub(a,b);
+        case '*':
+            return multiply(a,b);
+        case '/':
+            return div(a,b);
+        default:
+            return 'Invalid operator';
+    }
+}
