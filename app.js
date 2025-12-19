@@ -47,37 +47,37 @@ btns.forEach((button) =>{
 })
 let display = document.querySelector('.display');
 
-function populate(value){
-    if(!isNaN(value)){
+function populate(n){
+    if(!isNaN(n)){
         if(!operator){
-            firstNumber += value;
-            display.textContent = firstNumber;
+            firstNumber += n;
+            display.value = firstNumber;
         }else {
-            secondNumber += value;
-            display.textContent = secondNumber;
+            secondNumber += n;
+            display.value = secondNumber;
         }
-    } else if(['/', '*', '+', '-'].includes(value)){
+    } else if(['/', '*', '+', '-'].includes(n)){
         if(!firstNumber && !operator){
-            display.textContent = "please Enter operands before operator";
+            display.value = "please Enter operands before operator";
             return 
         }
         if(secondNumber && operator){
             let midResult = operate(operator, firstNumber, secondNumber);
-            display.textContent = midResult;
+            display.value = midResult;
             firstNumber = midResult;
             secondNumber = '';
         }
-        operator = value;
-    } else if(value === '='){
+        operator = n;
+    } else if(n === '='){
         if(!firstNumber && !secondNumber){
-          display.textContent = "please Enter numbers before =";
+          display.value = "please Enter numbers before =";
           return 
         }
         result = operate(operator, firstNumber, secondNumber);
         firstNumber = '';
         secondNumber = '';
         operator = '';
-        display.textContent = result
+        display.value = result
       }
     }
 
@@ -87,6 +87,5 @@ clear.addEventListener('click', ()=>{
     firstNumber = '';
     secondNumber = '';
     operator = '';
-    display.textContent = '';
+    display.value = '';
 })
-
