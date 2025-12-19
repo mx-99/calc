@@ -36,12 +36,9 @@ const btns = document.querySelectorAll('.buttons')
 
 btns.forEach((button) =>{
     button.addEventListener('click', (e)=>{
-        populate(e.target.innerText)
+        let number = e.target.innerText;
+        populate(number);
     })
 })
 
-function populate(value){
-    let display = document.querySelector('.display');
-    display.textContent = value
-}
 
