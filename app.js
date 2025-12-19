@@ -58,7 +58,13 @@ function populate(value){
         if(!firstNumber && !operator){
             display.textContent = "please Enter operands before operator";
             return 
-        }  
+        }
+        if(secondNumber && operator){
+            let midResult = operate(operator, firstNumber, secondNumber);
+            display.textContent = midResult;
+            firstNumber = midResult;
+            secondNumber = '';
+        }
         operator = value;
     } 
     }
