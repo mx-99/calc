@@ -9,8 +9,9 @@ function multiply(a,b){
     return a * b;
 }
 
-function div(a,b){
-    return a / b;
+function div(a, b) {
+    if(!isNaN(a) && b === 0) return "Can't divide 0"
+    return a/b
 }
 
 let firstNumber = '';
@@ -73,9 +74,7 @@ function populate(value){
           return 
         }
         result = operate(operator, firstNumber, secondNumber);
-        if(!isNaN(result)){
-          display.textContent = result
-        }
+        display.textContent = result
       }
     }
 
