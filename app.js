@@ -43,7 +43,10 @@ btns.forEach((button) =>{
     })
 })
 
-
+function populate(value){
+    let display = document.querySelector('.display');
+    display.textContent = value;
+}
 
 const clear = document.querySelector('.clear')
 
