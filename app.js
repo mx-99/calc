@@ -108,4 +108,7 @@ document.addEventListener('keydown', (e)=>{
         let j = '='
         work(j)
     }
+    if (key === 'Backspace') {
+        event.preventDefault();
+        display.value = display.value.slice(0, -1);}    
 })
