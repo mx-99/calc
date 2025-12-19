@@ -66,7 +66,16 @@ function populate(value){
             secondNumber = '';
         }
         operator = value;
-    } 
+    } else if(value === '='){
+        if(!firstNumber && !secondNumber){
+          display.textContent = "please Enter numbers before =";
+          return 
+        }
+        result = operate(operator, firstNumber, secondNumber);
+        if(!isNaN(result)){
+          display.textContent = result
+        }
+      }
     }
 
 const clear = document.querySelector('.clear')
