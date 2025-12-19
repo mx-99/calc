@@ -18,6 +18,8 @@ let operator = '';
 let secondNumber = ''
 
 function operate(op, a, b){
+    a = parseFloat(a);
+    b = parseFloat(b)
     switch(op){
         case '+':
             return add(a,b);
