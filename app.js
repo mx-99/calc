@@ -55,6 +55,10 @@ function populate(value){
             display.textContent = value;
         }
     } else if(['/', '*', '+', '-'].includes(value)){
+        if(!firstNumber && !operator){
+            display.textContent = "please Enter operands before operator";
+            return 
+        }  
         operator = value;
     } 
     }
