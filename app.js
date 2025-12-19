@@ -44,3 +44,12 @@ btns.forEach((button) =>{
 })
 
 
+
+const clear = document.querySelector('.clear')
+
+clear.addEventListener('click', ()=>{
+    display.textContent = '';
+    firstNumber = '';
+    secondNumber = '';
+    operator = '';
+    })
