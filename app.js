@@ -94,3 +94,18 @@ clear.addEventListener('click', ()=>{
     operator = '';
     display.value = '';
 })
+
+document.addEventListener('keydown', (e)=>{
+    let key = e.key;
+    console.log(key)
+    if(['1','2','3','4','5','6','7','8','9','0','.'].includes(key)){
+        work(key)
+    }
+    if(['+', '-', '*', '/'].includes(key)){
+        work(key)
+    }
+    if(['Enter'].includes(key)){
+        let j = '='
+        work(j)
+    }
+})
