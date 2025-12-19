@@ -15,7 +15,8 @@ function div(a,b){
 
 let firstNumber = '';
 let operator = '';
-let secondNumber = ''
+let secondNumber = '';
+let result = '';
 
 function operate(op, a, b){
     a = parseFloat(a);
@@ -42,9 +43,9 @@ btns.forEach((button) =>{
         populate(number);
     })
 })
+let display = document.querySelector('.display');
 
 function populate(value){
-    let display = document.querySelector('.display');
     display.textContent = value;
     if(!isNaN(value)){
         if(!operator){
@@ -81,8 +82,12 @@ function populate(value){
 const clear = document.querySelector('.clear')
 
 clear.addEventListener('click', ()=>{
+    clearfn()
+    })
+
+function clearfn(){
     display.textContent = '';
     firstNumber = '';
     secondNumber = '';
     operator = '';
-    })
+}
