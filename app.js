@@ -46,7 +46,16 @@ btns.forEach((button) =>{
 function populate(value){
     let display = document.querySelector('.display');
     display.textContent = value;
-}
+    if(!isNaN(value)){
+        if(!operator){
+            firstNumber += value;
+            display.textContent = firstNumber;
+        }else {
+            secondNumber += value;
+            display.textContent = value;
+        }
+    }
+    }
 
 const clear = document.querySelector('.clear')
 
