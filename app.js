@@ -42,44 +42,49 @@ const btns = document.querySelectorAll('.buttons')
 btns.forEach((button) =>{
     button.addEventListener('click', (e)=>{
         let number = e.target.innerText;
-        populate(number);
+        work(number);
     })
 })
 let display = document.querySelector('.display');
 
 function populate(n){
+    display.value = n;
+}
+
+function work(n){
     if(!isNaN(n)){
         if(!operator){
             firstNumber += n;
-            display.value = firstNumber;
+            populate(firstNumber);
         }else {
             secondNumber += n;
-            display.value = secondNumber;
+            populate(secondNumber);
         }
     } else if(['/', '*', '+', '-'].includes(n)){
         if(!firstNumber && !operator){
-            display.value = "please Enter operands before operator";
+            populate("please Enter operands before operator");
             return 
         }
         if(secondNumber && operator){
             let midResult = operate(operator, firstNumber, secondNumber);
-            display.value = midResult;
+            populate(midResult);
             firstNumber = midResult;
             secondNumber = '';
         }
         operator = n;
+        populate(operator)
     } else if(n === '='){
         if(!firstNumber && !secondNumber){
-          display.value = "please Enter numbers before =";
+          populate("please Enter numbers before =");
           return 
         }
         result = operate(operator, firstNumber, secondNumber);
         firstNumber = '';
         secondNumber = '';
         operator = '';
-        display.value = result
+        populate(result)
       }
-    }
+}
 
 const clear = document.querySelector('.clear')
 
