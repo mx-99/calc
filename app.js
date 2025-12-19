@@ -18,6 +18,7 @@ let firstNumber = '';
 let operator = '';
 let secondNumber = '';
 let result = '';
+let decimalValue = '';
 
 function operate(op, a, b){
     a = parseFloat(a);
@@ -47,14 +48,13 @@ btns.forEach((button) =>{
 let display = document.querySelector('.display');
 
 function populate(value){
-    display.textContent = value;
     if(!isNaN(value)){
         if(!operator){
             firstNumber += value;
             display.textContent = firstNumber;
         }else {
             secondNumber += value;
-            display.textContent = value;
+            display.textContent = secondNumber;
         }
     } else if(['/', '*', '+', '-'].includes(value)){
         if(!firstNumber && !operator){
@@ -74,6 +74,9 @@ function populate(value){
           return 
         }
         result = operate(operator, firstNumber, secondNumber);
+        firstNumber = '';
+        secondNumber = '';
+        operator = '';
         display.textContent = result
       }
     }
@@ -81,12 +84,9 @@ function populate(value){
 const clear = document.querySelector('.clear')
 
 clear.addEventListener('click', ()=>{
-    clearfn()
-    })
-
-function clearfn(){
-    display.textContent = '';
     firstNumber = '';
     secondNumber = '';
     operator = '';
-}
+    display.textContent = '';
+})
+
