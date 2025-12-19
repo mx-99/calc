@@ -54,7 +54,9 @@ function populate(value){
             secondNumber += value;
             display.textContent = value;
         }
-    }
+    } else if(['/', '*', '+', '-'].includes(value)){
+        operator = value;
+    } 
     }
 
 const clear = document.querySelector('.clear')
