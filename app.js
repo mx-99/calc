@@ -52,6 +52,19 @@ function populate(n) {
 }
 
 function work(n) {
+    if (n === '.') {
+        if (!operator) {
+            if (!firstNumber.includes('.')) {
+                firstNumber += '.';
+                populate(firstNumber);
+            }
+        } else {
+            if (!secondNumber.includes('.')) {
+                secondNumber += '.';
+                populate(secondNumber);
+            }
+        }
+    }
     if (!isNaN(n)) {
         if (!operator) {
             firstNumber += n;
