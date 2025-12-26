@@ -2,7 +2,8 @@
 
 A simple web app calculator built using **HTML**, **CSS**, and **JavaScript** as part of [The Odin Project’s Foundations course](https://www.theodinproject.com/paths/foundations/courses/foundations).
 
-[Demo](https//mx-99.github.io/calc)
+[Demo](https://mx-99.github.io/calc/)
+[Blog post](https://mx-99.github.io/posts/calculator/calculator/)
 ---
 
 ![screenshot](screenshot.png)
