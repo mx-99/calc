@@ -5,6 +5,7 @@ A simple web app calculator built using **HTML**, **CSS**, and **JavaScript** as
 [Demo](https://mx-99.github.io/calc/)
 
 [Blog post](https://mx-99.github.io/posts/calculator/calculator/)
+
 ---
 
 ![screenshot](screenshot.png)
